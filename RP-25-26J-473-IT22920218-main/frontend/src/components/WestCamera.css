@@ -1,0 +1,172 @@
+.west-camera {
+  background: #1a1a2e;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  color: #eee;
+}
+
+.camera-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #2d2d44;
+}
+
+.camera-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #00d4ff;
+}
+
+.camera-badge {
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.camera-badge.live {
+  background: #00ff88;
+  color: #0a0a0a;
+  animation: pulse-live 2s ease-in-out infinite;
+}
+
+.camera-badge.offline {
+  background: #666;
+  color: #ccc;
+}
+
+@keyframes pulse-live {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.camera-feed {
+  position: relative;
+  width: 100%;
+  background: #0a0a0a;
+  border-radius: 6px;
+  overflow: hidden;
+  min-height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.camera-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+}
+
+.camera-error,
+.camera-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+  color: #888;
+}
+
+.camera-error span,
+.camera-loading span {
+  font-size: 3rem;
+  margin-bottom: 12px;
+  opacity: 0.6;
+}
+
+.camera-error p,
+.camera-loading p {
+  margin: 8px 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #aaa;
+}
+
+.camera-error small {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 8px;
+}
+
+.camera-loading {
+  animation: fade-in-out 1.5s ease-in-out infinite;
+}
+
+@keyframes fade-in-out {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.camera-info {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #2d2d44;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  font-size: 0.9rem;
+}
+
+.info-row.detection-summary {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.info-label {
+  font-weight: 600;
+  color: #aaa;
+}
+
+.info-value {
+  font-weight: 500;
+  color: #fff;
+}
+
+.detection-summary .info-value {
+  font-size: 0.85rem;
+  color: #00d4ff;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .west-camera {
+    padding: 12px;
+  }
+
+  .camera-header h3 {
+    font-size: 1rem;
+  }
+
+  .camera-feed {
+    min-height: 240px;
+  }
+
+  .info-row {
+    font-size: 0.85rem;
+  }
+}
